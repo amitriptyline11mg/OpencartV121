@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Master Suite">
+	<groups>
+		<run>
+			<!-- <include name="Sanity" /> -->
+			<include name="Master" />
+			<!-- <include name = "Regression"/> -->
+			<!-- <exclude name="Sanity"/> -->
+		</run>
+	</groups>
+
+	<listeners>
+		<listener class-name="utilities3.ExtentReportManager" />
+	</listeners>
+	
+	<test thread-count="5" name="Test">
+
+		<parameter name="os" value="Windows" />
+		<parameter name="browser" value="Chrome" />
+
+		<!-- I'll create a copy of this xml file that will run parallel testing -->
+
+		<classes>
+			<class name="testCases2.TC001_AccountRegistrationTest" />
+			<class name="testCases2.TC002_LoginTest" />
+			<!-- <class name="testCases2.TC003B_LoginDDT" /> -->
+		</classes>
+
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
